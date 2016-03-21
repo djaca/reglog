@@ -1,0 +1,19 @@
+{
+  "name": "djaca/registration_login",
+  "description": "Registration / Login Project",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Aleksandar Savanovic",
+      "email": "djaca85@gmail.com"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "2.2.*"
+  },
+  "require-dev": {
+    "filp/whoops": "2.1.*",
+    "symfony/var-dumper": "3.0.*"
+  }
+}
