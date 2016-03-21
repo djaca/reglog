@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b623cfd8d31fc4555e1e1872dc1203a9",
-    "content-hash": "961d4a8e343aff7be6f9a1d5690f696a",
+    "hash": "982dfa871f6041d64f85713ac99a8ee2",
+    "content-hash": "c60f867a4b383c57d69a4e0fcebf68ef",
     "packages": [
         {
             "name": "phpmailer/phpmailer",
@@ -118,6 +118,52 @@
                 "environment"
             ],
             "time": "2016-02-11 08:44:10"
+        },
+        {
+            "name": "vlucas/valitron",
+            "version": "v1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/valitron.git",
+                "reference": "bb181072f427c1ba2ec8b433a0c35b60e99e207e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/valitron/zipball/bb181072f427c1ba2ec8b433a0c35b60e99e207e",
+                "reference": "bb181072f427c1ba2ec8b433a0c35b60e99e207e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Valitron": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Simple, elegant, stand-alone validation library with NO dependencies",
+            "homepage": "http://github.com/vlucas/valitron",
+            "keywords": [
+                "valid",
+                "validation",
+                "validator"
+            ],
+            "time": "2016-03-15 21:14:19"
         }
     ],
     "packages-dev": [
