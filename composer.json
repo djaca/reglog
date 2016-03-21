@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "vlucas/phpdotenv": "2.2.*"
+    "vlucas/phpdotenv": "2.2.*",
+    "phpmailer/phpmailer": "5.2.*"
   },
   "require-dev": {
     "filp/whoops": "2.1.*",
