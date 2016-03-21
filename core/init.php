@@ -7,7 +7,7 @@
 
     define('INC_ROOT', dirname(__DIR__));
 
-    require INC_ROOT . '/vendor/autoload.php';
+    require dirname(__DIR__) . '/vendor/autoload.php';
 
     $whoops = new \Whoops\Run;
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
@@ -15,3 +15,13 @@
 
     $dotenv = new Dotenv\Dotenv(INC_ROOT);
     $dotenv->load();
+
+    // Initialize Database
+    $database = new medoo([
+        'database_type' => getenv('DB_TYPE'),
+        'database_name' => getenv('DB_DATABASE'),
+        'server' => getenv('DB_HOST'),
+        'username' => getenv('DB_USERNAME'),
+        'password' => getenv('DB_PASSWORD'),
+        'charset' => getenv('DB_CHARSET')
+    ]);
