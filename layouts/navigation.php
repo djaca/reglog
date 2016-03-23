@@ -19,7 +19,6 @@
                 <ul class="nav navbar-nav">
                     <li <?= stripos($_SERVER['REQUEST_URI'], 'login.php') ? 'class="active"' : '' ?>><a href="<?= getenv('BASE_URL') ?>auth/login.php">Login</a></li>
                     <li <?= stripos($_SERVER['REQUEST_URI'], 'register.php') ? 'class="active"' : '' ?>><a href="<?= getenv('BASE_URL') ?>auth/register.php">Register</a></li>
-                    <li><a href="<?= getenv('BASE_URL') ?>db.php">Reset database</a></li>
                 </ul>
             <?php endif; ?>
         </div><!--/.nav-collapse -->
