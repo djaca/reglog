@@ -125,6 +125,24 @@
         }
 
         /**
+         * Find user by identifier.
+         *
+         * @param $identifier
+         * @return bool
+         */
+        public function findByIdentifier($identifier)
+        {
+            $user = $this->_db->get('users', '*', ['remember_identifier' => $identifier]);
+
+            if(!$user) {
+                return false;
+            }else {
+                $this->_userData = $user;
+                return true;
+            }
+        }
+
+        /**
          * Activate account.
          *
          * @param $id
@@ -202,6 +220,16 @@
 
             Session::delete($this->_sessionName);
             Cookie::delete($this->_cookieName);
+        }
+
+        /**
+         * Check if user exists.
+         *
+         * @return bool
+         */
+        public function exists()
+        {
+            return (!empty($this->_userData)) ? true : false;
         }
 
         /**
