@@ -1,4 +1,9 @@
 <?php
+    use Acme\Cookie;
+    use Acme\Hash;
+    use Acme\Session;
+    use Acme\User;
+
     session_start();
 
     ini_set('display_errors', 1);
@@ -25,3 +30,24 @@
         'password' => getenv('DB_PASSWORD'),
         'charset' => getenv('DB_CHARSET')
     ]);
+
+    if(Cookie::exists(getenv('AUTH_REMEMBER')) && !Session::exists(getenv('AUTH_SESSION')))
+    {
+        $data = Cookie::get(getenv('AUTH_REMEMBER'));
+        $credentials = explode('___', $data);
+
+        if(!empty(trim($data)) || count($credentials) === 2) {
+            $identifier = $credentials[0];
+            $token = Hash::createHash($credentials[1]);
+
+            $user = new User();
+
+            if($user->findByIdentifier($identifier)) {
+                if(Hash::hashCheck($token, $user->userData()->remember_token)) {
+                    $user->login();
+                }else {
+                    $user->removeRememberCredentials($user->userData()->id);
+                }
+            }
+        }
+    }
