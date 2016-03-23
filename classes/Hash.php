@@ -47,6 +47,7 @@
          */
         public static function hashCheck($knownHash, $userHash)
         {
+//            return hash_equals($knownHash, $userHash);
             return ($knownHash === $userHash);
         }
 
